@@ -1,7 +1,7 @@
 const Home = () => {
   return (
-    <section>
-      <h1>Latest blogs</h1>
+    <section className="flex-1 bg-sky-100">
+      <h1 className="text-3xl">Latest blogs</h1>
     </section>
   );
 };
