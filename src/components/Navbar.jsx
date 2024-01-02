@@ -2,7 +2,7 @@ const Navbar = () => {
   return (
     <nav>
       {/* links */}
-      <div className="flex p-4 justify-center gap-4 text-xl font-bold border-b">
+      <div className="flex p-4 justify-center gap-4 text-xl border-b">
         <a href="/">Home</a>
         <a href="/create">New blog</a>
         <a href="/account">My account</a>
