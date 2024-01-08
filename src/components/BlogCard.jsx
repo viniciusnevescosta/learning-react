@@ -2,7 +2,7 @@ const BlogCard = () => {
   return (
     <div className="flex flex-col gap-4 p-5 rounded-lg bg-zinc-50 shadow-sm">
       <div className="flex justify-between">
-        <p>02/01/2024</p>
+        <p>02/01/2024 - Author</p>
         <i className="ri-heart-line text-xl"></i>
       </div>
       <div className="flex flex-col gap-2">
