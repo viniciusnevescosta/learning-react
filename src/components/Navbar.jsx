@@ -4,16 +4,19 @@ const Navbar = () => {
   const [items, setItems] = useState([
     {
       id: 1,
+      icon: 'ri-home-4-line',
       title: "Home",
       link: "/",
     },
     {
       id: 2,
+      icon: 'ri-news-line',
       title: "New blog",
       link: "/",
     },
     {
       id: 3,
+      icon: 'ri-account-box-line',
       title: "My account",
       link: "/",
     },
@@ -27,8 +30,9 @@ const Navbar = () => {
           <a
             key={item.key}
             href={item.link}
-            className="bg-zinc-100 px-5 py-2 rounded-xl"
+            className="flex gap-2 bg-zinc-50 px-5 py-2 rounded-lg"
           >
+            <i className={item.icon} />
             {item.title}
           </a>
         ))}
