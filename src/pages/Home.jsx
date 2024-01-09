@@ -2,19 +2,18 @@ import { useState } from "react";
 import BlogCard from "../components/BlogCard";
 
 const Home = () => {
-  const [blogs] = useState([
-    // definir , setBlogs depois
+  const [blogs, setBlogs] = useState([
     {
       id: 0,
-      author: "vini",
+      author: "Vini",
       date: "02/01/2024",
-      liked: false,
+      liked: true,
       title: "teste",
       body: "oi",
     },
     {
       id: 1,
-      author: "vini",
+      author: "Pedro",
       date: "02/01/2024",
       liked: false,
       title: "teste",
@@ -27,11 +26,8 @@ const Home = () => {
       <div className="flex justify-between">
         <h1 className="text-3xl">Latest blogs</h1>
       </div>
-      <div className="flex-1 flex flex-col gap-4">
-        {blogs.map((blog) => (
-          <BlogCard key={blog.id} />
-        ))}
-      </div>
+      {/* <BlogCard blogs={blogs} /> */}
+      <BlogCard blogs={blogs.filter(blog => blog.author === "Pedro")} />
     </section>
   );
 };
