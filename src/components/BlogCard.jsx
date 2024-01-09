@@ -1,11 +1,11 @@
 /* eslint-disable react/prop-types */
-const BlogCard = ({ blogs }) => {
+const BlogCard = ({ blogs, handleDelete }) => {
   return (
     <div className="flex-1 flex flex-col gap-4">
       {blogs.map((blog) => (
         <div
+          className="flex flex-col gap-4 p-5 rounded-lg bg-zinc-50 shadow-sm hover:cursor-pointer hover:bg-zinc-100 hover:shadow-sm"
           key={blog.id}
-          className="flex flex-col gap-4 p-5 rounded-lg bg-zinc-50 shadow-sm"
         >
           <div className="flex justify-between">
             <p>
@@ -17,7 +17,11 @@ const BlogCard = ({ blogs }) => {
               ) : (
                 <i className="ri-heart-line text-xl hover:cursor-pointer" />
               )}
-              <i className="ri-delete-bin-line text-xl hover:cursor-pointer"></i>
+              {/* Emit function: */}
+              <i
+                className="ri-delete-bin-line text-xl hover:cursor-pointer"
+                onClick={() => handleDelete(blog.id)}
+              ></i>
             </div>
           </div>
           <div className="flex flex-col gap-2">

@@ -8,11 +8,19 @@ const Home = () => {
       author: "Vini",
       date: "02/01/2024",
       liked: true,
-      title: "teste",
+      title: "eae",
       body: "oi",
     },
     {
       id: 1,
+      author: "Pedro",
+      date: "02/01/2024",
+      liked: false,
+      title: "oi",
+      body: "oi",
+    },
+    {
+      id: 2,
       author: "Pedro",
       date: "02/01/2024",
       liked: false,
@@ -21,13 +29,23 @@ const Home = () => {
     },
   ]);
 
+  // Emit function
+  const handleDelete = (id) => {
+    const newsBlogs = blogs.filter((blog) => blog.id !== id);
+    setBlogs(newsBlogs);
+  };
+
   return (
     <section className="flex-1 gap-5 flex flex-col">
       <div className="flex justify-between">
         <h1 className="text-3xl">Latest blogs</h1>
       </div>
-      {/* <BlogCard blogs={blogs} /> */}
-      <BlogCard blogs={blogs.filter(blog => blog.author === "Pedro")} />
+
+      {/* Passing a prop and a emit function. */}
+      <BlogCard blogs={blogs} handleDelete={handleDelete} />
+
+      {/* If I wanna to filter a list, I can do this with the Js. 'filter' function. */}
+      {/* <BlogCard blogs={blogs.filter((blog) => blog.author === "Pedro")} /> */}
     </section>
   );
 };
